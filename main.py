@@ -17,6 +17,7 @@ ratio = 50
 begin = 300
 wave = [[begin, center_y]]
 tick = 0.1
+int n = 2
 while(not done):
     clock.tick(60)
     for event in pygame.event.get():  # User did something
@@ -25,10 +26,11 @@ while(not done):
     screen.fill([0, 0, 0])  
     for w in wave:
         w[0] += 1
-    pygame.draw.circle(screen, WHITE, center, ratio, 1)
-    x = center_x + ratio * math.cos(time)
-    y = center_y + ratio * math.sin(time)
-    pygame.draw.circle(screen, WHITE, [int(x), int(y)], 5, 0)
+    for i in range(n):
+        pygame.draw.circle(screen, WHITE, center, ratio, 1)
+        x = center_x + ratio * math.cos(time)
+        y = center_y + ratio * math.sin(time)
+        pygame.draw.circle(screen, WHITE, [int(x), int(y)], 5, 0)
     wave.insert(0, [begin, y])
     pygame.draw.line(screen, WHITE, center, [x, y])
     if(len(wave) > screen.get_width() - begin):
