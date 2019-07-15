@@ -37,6 +37,13 @@ while(not done):
             if event.key == pygame.K_UP:
                 if(k < 30):
                     k += 1
+            if event.key == pygame.K_LEFT:
+                if(tick > 0.005):
+                    tick -= 0.005
+            if event.key == pygame.K_RIGHT:
+                if(tick < 1):
+                    tick += 0.005
+
     screen.fill([0, 0, 0])
     if(not pause):
         for w in wave:
