@@ -45,8 +45,8 @@ class double_machine_draw:
             temp_y2 = y2
             x = x + radiusx * math.cos(freq_x * time + phasex)
             y = y + radiusx * math.sin(freq_x * time + phasex)
-            x2 = x2 + radiusy * math.cos(freq_y * time + phasey)
-            y2 = y2 + radiusy * math.sin(freq_y * time + phasey)
+            x2 = x2 + radiusy * math.cos(freq_y * time + phasey - math.pi/2)
+            y2 = y2 + radiusy * math.sin(freq_y * time + phasey - math.pi/2)
             pygame.draw.line(self.screen, colors.WHITE, [temp_x, temp_y], [x, y])
             pygame.draw.line(self.screen, colors.WHITE, [temp_x2, temp_y2], [x2, y2])
             pygame.draw.circle(self.screen, colors.WHITE, [int(x), int(y)], 0, 0)
@@ -88,8 +88,8 @@ class simple_machine_draw:
                     pygame.draw.circle(self.screen, colors.WHITE, [int(x), int(y)], 1, 1)
             temp_x = x
             temp_y = y
-            x = x + radius * math.cos(n * time + phase + math.pi/2)
-            y = y + radius * math.sin(n * time + phase + math.pi/2)
+            x = x + radius * math.cos(n * time + phase + math.pi/2 - math.pi/2)
+            y = y + radius * math.sin(n * time + phase + math.pi/2 - math.pi/2)
             pygame.draw.line(self.screen, colors.WHITE, [temp_x, temp_y], [x, y])
             pygame.draw.circle(self.screen, colors.WHITE, [int(x), int(y)], 0, 0)
                         
