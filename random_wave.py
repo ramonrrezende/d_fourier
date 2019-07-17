@@ -1,7 +1,7 @@
 import pygame
 import math
 import random
-from fourier import *
+from modules.fourier import fourier
 
 
 pygame.init()
