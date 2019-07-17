@@ -41,8 +41,10 @@ while(not done):
                 if(tick > 0.005):
                     tick -= 0.005
             if event.key == pygame.K_RIGHT:
-                if(tick < 1):
+                if(tick < 0.15):
                     tick += 0.005
+            if event.key == pygame.K_c:
+                    wave = [wave[0]]
 
     screen.fill([0, 0, 0])
     if(not pause):
@@ -74,4 +76,3 @@ while(not done):
         time -= tick
     pygame.display.flip()
 pygame.quit()
-
