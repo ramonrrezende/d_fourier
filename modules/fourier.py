@@ -25,7 +25,7 @@ class fourier:
 
             term = {'re':re, 'im':im, 'amp':amp, 'freq':freq, 'phase':phase}
             dft.append(term)
-        return dft
+        return sorted(dft, reverse=True, key=lambda i: i['amp'])
 
 class fourier2d:
 
@@ -51,4 +51,4 @@ class fourier2d:
 
             term = {'re':c.re, 'im':c.im, 'amp':amp, 'freq':freq, 'phase':phase}
             dft.append(term)
-        return dft
+        return sorted(dft, reverse=True, key=lambda i: i['amp'])
